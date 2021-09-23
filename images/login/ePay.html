@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://esewa.com.np/epay#/ -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./ePay_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./ePay_files/style.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://esewa.com.np/images/favicon.ico">
+    <link rel="stylesheet" href="./ePay_files/css">
+    <link rel="stylesheet" href="./ePay_files/css">
+    <link href="./ePay_files/user-module.css" rel="stylesheet">
+
+    <script src="./ePay_files/jquery-2.2.4.min.js.download" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="./ePay_files/vendor.js.download"></script>
+
+    <script src="./ePay_files/lodash.min.js.download"></script>
+    <script src="./ePay_files/angular-ui-router.min.js.download"></script>
+    <script src="./ePay_files/qr-code.js.download"></script>
+    <script src="./ePay_files/jquery-qrcode-0.17.0.min.js.download"></script>
+    <title>ePay</title>
+</head>
+
+<body ng-app="epayApp" class="ep-body ng-scope" data-new-gr-c-s-check-loaded="14.1021.0" data-gr-ext-installed="">
+<div class="mt70">
+    <div class="row">
+        <!-- ngInclude: '/templates/top_navigation_bar.html' --><div ng-include="&#39;/templates/top_navigation_bar.html&#39;" class="ng-scope"><!-- nav container --> <div class="container-fluid nav-main-bg navbar-fixed-top ng-scope" ng-controller="TxnDetailsController"> <div class="container"> <div class="row"> <div class="col-lg-12"> <div class="row"> <div class="col-lg-9 col-md-6 col-sm-6"> <a class="navbar-brand es-brand-epay" rel="home" title="eSewa"> <img src="./ePay_files/esewa_epay_logo.png" alt="eSewa"> </a> </div> <div class="nav navbar-nav navbar-right col-lg-3 col-md-6 col-sm-6" style="color:white;"> <div class="text-right ep-profile-name"> <span class="text-capitalize"><strong class="ng-binding"></strong></span> <!-- ngIf: product.balance --> </div> </div> </div> </div> </div> </div> </div> </div>
+    </div>
+</div>
+<div class="container">
+    <!-- uiView: --><div ui-view="" class="ng-scope"><div class="row ng-scope" ng-controller="ErrorMessageController"> <!-- ngInclude: '/templates/sub_navaigation_bar.html' --><span ng-include="&#39;/templates/sub_navaigation_bar.html&#39;" class="ng-scope"> <div class="container-fliud nav-sub-bg push-down ng-scope"> <div class="container"> <div class="row"> <ul class="nav nav-pills"> <!-- ngRepeat: menu in menus | orderBy: 'index' --> </ul> </div> <div class="row make-pay-info"> <h4>Please login to make your payment </h4> </div> </div> </div> </span> </div> <div class="container mt15 ng-scope"> <div class="row mt20"> <div ng-class="qrEnable ? &#39;col-md-4&#39; : &#39;col-md-8&#39;" class="col-md-8"> <!-- ngInclude: --><ng-include src="&#39;/templates/txndetails.html&#39;" class="ng-scope"><div id="txn_details " class="ep-txn-detail ng-scope" ng-controller="TxnDetailsController"> <div class="panel ep-box min-height-432 row right-space"> <div class="panel-heading col-lg-12"> <h3 class="panel-title"> Transaction Details </h3> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12"> <h5 class="col-lg-6 pn bold ng-binding">GYAPU MARKETPLACE PVT.LTD</h5> <h5 class="col-lg-6 pn text-left bold" style="text-align: right">NPR</h5> <table class="table"> <tbody> <tr> <td>Product Amount:</td> <td id="amt" align="right" class="ng-binding">676.00</td> </tr> <tr> <td>Tax Amount:</td> <td id="txAmt" align="right" class="ng-binding">0.00</td> </tr> <tr> <td>Service Charge:</td> <td id="psc" align="right" class="ng-binding">0.00</td> </tr> <tr> <td>Delivery Charge:</td> <td id="pdc" align="right" class="ng-binding">0.00</td> </tr> <tr class="ep-total-amt"> <td>Total Amount:</td> <td id="tAmt" align="right" class="ng-binding">676.00</td> </tr> <tr style="display: none !important;"> <td>Service Code:</td> <td id="scd" align="right" class="ng-binding">NP-ES-GYAPU</td> </tr> <tr style="display: none !important;"> <td>Product ID:</td> <td id="pid" align="right" class="ng-binding">60bf2db4650a535ae6efd795</td> </tr> <tr style="display: none !important;"> <td id="su" align="right" class="ng-binding">https://www.gyapu.com/api/cart/payment/esewa/success</td> </tr> <!--<tr style="display: none !important;">--> <tr style="display: none !important;"> <td id="fu" align="right" class="ng-binding">https://www.gyapu.com/api/cart/payment/esewa/falure</td> </tr> </tbody> </table> </div> </div> </div> </div> <div ng-controller="EpayQrPaymentController" ng-init="isQrEpayEnable(product)" class="ng-scope"> </div> </div> </ng-include> </div> <div ng-class="qrEnable ? &#39;col-md-8&#39; : &#39;col-md-4&#39;" class="col-md-4"> <div class="panel ep--panel row"> <!-- ngInclude: --><ng-include src="&#39;/templates/login.html&#39;" class="ng-scope"><div class="ep-login col-md-6 ng-scope" ng-controller="ErrorMessageController"> <div class="ep-form form"> <div class="panel ep-box ep-login-box"> <div class="panel-heading"> <h3 class="panel-title">Login</h3> </div> <div class="panel-body"> <!-- ngIf: error --> <form action="https://esewa.com.np/epay/login" method="POST" class="ng-pristine ng-valid"> <div class="form-group mb30"> <label>eSewa ID: </label> <input class="form-control" name="username" placeholder="email/ mobile number" type="text"> </div> <div class="form-group mb30"> <label>Password:</label> <input class="form-control" name="password" placeholder="password" type="password"> </div> <input name="amt" type="hidden" value="676"> <input name="scd" type="hidden" value="NP-ES-GYAPU"> <input name="pid" type="hidden" value="60bf2db4650a535ae6efd795"> <input name="fu" type="hidden" value="https://www.gyapu.com/api/cart/payment/esewa/falure"> <input name="tAmt" type="hidden" value="676"> <div class="form-group"> <button class="form-control btn btn-success btn-raised ep-btn" ng-click="showLoading()" type="submit"> login </button> <button class="form-control btn btn-default btn-raised ep-btn ng-scope" ng-click="loginCancel()" ng-controller="EpayLoginController" type="button">Cancel </button> </div> </form> </div> </div> <!-- ngIf: showloadingBar --> </div> </div></ng-include> <!-- ngInclude: --><ng-include src="&#39;/html/templates/qr/epayqr.html&#39; | cdn" class="ng-scope"><div ng-controller="EpayQrPaymentController" ng-show="qrEnable" class="col-sm-6 ng-scope ng-hide">
+    <div class="ep-box">
+        <br>
+        <div class="row">
+            <div class="col-md-12 ep-img-logo">
+                <div class="ep-logo-container fonepay-img">
+                    <img src="./ePay_files/fonepay-fatafat.png">
+                </div>
+                <div class="ep-circle"></div>
+                <div class="ep-logo-container esewa-img">
+                    <img src="./ePay_files/esewa-logo.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="text-center ep-qr-container">
+                <div id="qrCode"></div>
+                <div ng-show="showTickAnimation" class="success-qr-scan ng-hide">
+                    <div class="loader-container">
+                        <div class="icon-container">
+                            <div class="success"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ep-qr-instruction">
+                <h4 style="padding-left: 24px;"><strong>How do I pay using QR Code ?</strong></h4>
+                <ol>
+                    <li>Open your eSewa application or mobile banking application.</li>
+                    <li>Open QR scanner and scan</li>
+                    <li>Tap on Confirm button to pay</li>
+                </ol>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+<style class="ng-scope">
+    .ep-main {
+        padding: 20px;
+        background-color: white;
+        border-radius: 4px;
+        margin-bottom: 15px;
+    }
+
+    .ep-img-logo {
+        display: inline;
+        align-items: center;
+        margin-bottom: 30px;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .ep-logo-container {
+        display: inline-block;
+    }
+
+    .ep-circle {
+        background-color: #dedede;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        height: 4px;
+        width: 4px;
+        margin: 0 10px;
+        display: inline-block;
+    }
+
+    .ep-logo-container img {
+        width: 116px;
+        margin: 0 12px;
+    }
+
+    .esewa-img img{
+        width: 92px !important;
+    }
+
+    .ep-qr-container {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    .success-qr-scan{
+        position: absolute;
+        left: 50%;
+        margin-left: -40px;
+        top: 50%;
+        margin-top: -40px;
+    }
+    .ep-qr-container img {
+        width: 250px;
+        padding: 20px;
+        border: 1px #e9e9e9 solid;
+    }
+
+
+    .ep-qr-instruction {
+        color: #333;
+        padding: 15px;
+        line-height: 24px;
+    }
+
+    .ep-qr-instruction ol {
+        margin-top: 10px;
+    }
+
+
+
+    .ep-box .alert-success{
+        font-size: 12px;
+    }
+
+    .ep-seprator hr {
+        border-top: 1px solid #d1d1d1;
+    }
+
+    /*verified tick mark animation*/
+    .icon-container {
+        width: 80%;
+        height: 80%;
+        border-radius: 100%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        margin: 0;
+        top: 10%;
+        left: 10%;
+    }
+
+    .success {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        animation: bg-success 2s 1.5s ease-out;
+        animation-fill-mode: forwards;
+        border-radius: 100%;
+        top: 0;
+        left: 0;
+    }
+    .success:before, .success:after {
+        content: "";
+        position: absolute;
+        background: white;
+    }
+    .success:before {
+        left: 21%;
+        top: 53%;
+        width: 5px;
+        transform-origin: top;
+        transform: rotate(-54deg);
+        animation: success-before 0.1s 2s ease-out;
+        animation-fill-mode: forwards;
+    }
+    .success:after {
+        height: 5px;
+        width: 0;
+        left: 42%;
+        top: 70%;
+        transform-origin: top left;
+        transform: rotate(-54deg);
+        animation: success-after 0.2s 2.2s ease;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes success-before {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 20px;
+        }
+    }
+    @keyframes success-after {
+        from {
+            width: 0;
+        }
+        to {
+            width: 30px;
+        }
+    }
+
+    .loader-container {
+        position: relative;
+        height: 80px;
+        width: 80px;
+        padding: 10px;
+        border-radius: 100%;
+        margin: auto;
+    }
+    .loader-container:before {
+        content: "";
+        position: absolute;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        border-radius: 100%;
+        padding: 10px;
+        top: 0;
+        left: 0;
+    }
+    @keyframes bg-success {
+        0% {
+            background: #e9e9e9;
+        }
+        100% {
+            background: #60BB47;
+        }
+    }
+
+</style>
+</ng-include> <!--<ng-include src="'/templates/epayqr.html'"></ng-include>--> </div> </div> </div> </div> </div>
+</div>
+
+<!-- footer-->
+<!-- ngInclude: --><ng-include src="&#39;/templates/esewa_footer.html&#39;" class="ng-scope"><div class="footer-wrapper row ep-footer ng-scope"> <div class="container"> <div class="row mn footer-bottom"> <div class="col-lg-6 pn footer-copyright"> <h6>© eSewa Nepal, 2009-2020. All Rights Reserved.</h6> </div> <div class="col-lg-6 pn footer-brnd-logo"> <img class="img-responsive footer-logo" src="./ePay_files/esewa-logo.png" alt="eSewa"> </div> </div> </div> </div> <a id="scrollup" style="z-index: 1000" class="ng-scope"> <span class="glyphicon glyphicon-arrow-up"></span> </a> <script type="text/javascript" class="ng-scope">$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('#scrollup').fadeIn();
+        } else {
+            $('#scrollup').fadeOut();
+        }
+    });
+
+    $('#scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+}); </script> </ng-include>
+
+
+<script src="./ePay_files/ePayAppLogin.min.js.download"></script>
+
+
+
+
+
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
